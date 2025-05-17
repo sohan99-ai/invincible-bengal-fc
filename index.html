@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INVINCIBLE BENGAL FC</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://cdn.cloudflare.steamstatic.com/steam/apps/1665460/header.jpg?t=1714122949') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #00ff99;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      position: relative;
+    }
+    .slogan {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #fff;
+      margin-top: 0.5rem;
+    }
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      height: auto;
+    }
+    nav {
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #00ff99;
+    }
+    main {
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+      background-color: rgba(255, 255, 255, 0.97);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #00ff99;
+      padding-bottom: 0.3rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 0.4rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.7rem;
+      text-align: center;
+    }
+    th {
+      background-color: #00ff99;
+      color: #000;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      margin: 0.5rem;
+    }
+    .profile-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="invincible_bengal_fc_logo.png" alt="Club Logo" class="logo" />
+    INVINCIBLE BENGAL FC
+    <div class="slogan">Roar Of Bengal Tiger</div>
+  </header>
+  <nav>
+    <a href="#teams">Registered Clubs</a>
+    <a href="#players">Players</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#ranking">Points Table</a>
+    <a href="#result">Submit Result</a>
+    <a href="#social">Social Media</a>
+    <a href="#tournament">Create Tournament</a>
+    <a href="#league">League</a>
+  </nav>
+  <main>
+    <section id="players">
+      <h2>Player Registration</h2>
+      <form id="playerRegistrationForm">
+        <input type="text" id="playerName" placeholder="Player Name" required />
+        <input type="text" id="playerClub" placeholder="Club Name" required />
+        <input type="text" id="playerPosition" placeholder="Position" required />
+        <input type="text" id="playerId" placeholder="User ID" required />
+        <input type="text" id="playerDevice" placeholder="Device Info" required />
+        <input type="file" id="playerPhoto" accept="image/*" required />
+        <button type="submit">Register Player</button>
+      </form>
+      <ul id="playerList"></ul>
+    </section>
+
+    <section id="schedule">
+      <h2>Match Schedule</h2>
+      <p>Upcoming matches will be displayed here.</p>
+    </section>
+
+    <section id="result">
+      <h2>Submit Match Result</h2>
+      <form id="resultForm">
+        <input type="text" id="teamA" placeholder="Team A" required />
+        <input type="number" id="scoreA" placeholder="Score A" required />
+        <input type="text" id="teamB" placeholder="Team B" required />
+        <input type="number" id="scoreB" placeholder="Score B" required />
+        <button type="submit">Submit Result</button>
+      </form>
+    </section>
+
+    <section id="ranking">
+      <h2>Points Table</h2>
+      <div id="pointsTableContainer"></div>
+    </section>
+
+    <section id="tournament">
+      <h2>Create Tournament</h2>
+      <form id="createTournamentForm">
+        <input type="text" id="tournamentName" placeholder="Tournament Name" required />
+        <select id="tournamentType">
+          <option value="group">Group Stage</option>
+          <option value="knockout">Knockout Stage</option>
+        </select>
+        <button type="submit">Create</button>
+      </form>
+      <div id="createdTournaments"></div>
+    </section>
+
+    <section id="social">
+      <h2>Social Media</h2>
+      <ul>
+        <li><a href="https://www.facebook.com/profile.php?id=61558765833345" target="_blank">📣 Facebook Page</a></li>
+        <li><a href="https://www.facebook.com/groups/1165278598083226" target="_blank">👥 Facebook Group</a></li>
+      </ul>
+    </section>
+
+    <section id="league">
+      <h2>League System</h2>
+      <p>Create league tournaments where registered players compete and results affect their profiles and team ranking.</p>
+      <form id="leagueMatchForm">
+        <select id="leaguePlayerA"></select>
+        <input type="number" id="leagueScoreA" placeholder="Player A Score" required />
+        <select id="leaguePlayerB"></select>
+        <input type="number" id="leagueScoreB" placeholder="Player B Score" required />
+        <button type="submit">Submit Match</button>
+      </form>
+      <div id="leagueTable"></div>
+    </section>
+  </main>
+</body>
+</html>
